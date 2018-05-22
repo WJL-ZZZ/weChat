@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/candler/candler",
     "pages/index/index",
+    "pages/candler/candler",
     "pages/logs/logs",
     "pages/home/home"
   ],
@@ -10,5 +10,17 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/candler/candler"
+      }
+    ]
   }
 }
