@@ -1,6 +1,6 @@
 <view class="container">
-  <view  class="body-view log-item">
-    <text plain="true" disabled="false"> {{money}} </text>
-    <button bindtap="getRadom">点击获得今日需要存储的金额</button>
+  <view  class="body-view text-center">
+    <text class='tv-money' plain="true" disabled="false"> {{money}} </text>
+    <button class='margin-top' bindtap="getRadom">点击获得今日需要存储的金额</button>
   </view>
 </view>

@@ -1,4 +1,11 @@
 /* pages/home/home.wxss */
-.log-item {
+.text-center {
   text-align: center;
+}
+.margin-top{
+  margin-top: 50px;
+}
+.tv-money{
+  font-size:25px;
+  color: deeppink;
 }
