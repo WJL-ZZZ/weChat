@@ -13,7 +13,12 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+const getRadom = n =>{
+  return Math.floor(Math.random() * n + 1)
+
+}
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getRadom: getRadom
 }
