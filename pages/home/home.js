@@ -1,11 +1,10 @@
 //获取应用实例ß
 const util = require('../../utils/util.js')
 
-var homeMoney = "0"
-var time ="0"
+var time = "0"
 var dailyMoney = {
   time: "",
-  dailyMoney: "0",
+  money: "0",
   readySave: false,
 }
 const conf = {
@@ -16,24 +15,20 @@ const conf = {
   onLoad(options) {
     var today = new Date();
     time = util.formatTime(today)
-    var mDailyMoney = util.getListByTime(time) || {};
-    if (mDailyMoney != {}) {
-      dailyMoney = mDailyMoney
-    }
-    homeMoney = dailyMoney.money || "0"
+    dailyMoney = util.getListByTime(time)
     this.setData({
-      money: homeMoney
+      money: dailyMoney.money
     })
   },
 
   getRadom: function (e) {
-    if (homeMoney == "0") {
-      homeMoney = util.getRadom(365)
+    if (dailyMoney.money == "0") {
+      dailyMoney.money = util.getRadom(365)
       this.setData({
-        money: homeMoney
+        money: dailyMoney.money
       })
       dailyMoney.time = time
-      dailyMoney.money = homeMoney
+      dailyMoney.money = dailyMoney.money
       util.setList(dailyMoney)
     }
   }

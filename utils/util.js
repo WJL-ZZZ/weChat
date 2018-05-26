@@ -21,45 +21,34 @@ const getRadom = n => {
 const setList = dataItem => {
   var dailyMoneyList = getList() || new Array();
   for (let i in dailyMoneyList) {
-    if (dailyMoneyList[i] == dataItem) {  //如果数组中有该城市，flage变为false  
+    if (dailyMoneyList[i] == dataItem) {
       return false;
     }
   }
 
   dailyMoneyList.push(dataItem);
-  wx.setStorage({
-    key: "dailyMoney",
-    data: dailyMoneyList,
-  })
+  wx.setStorageSync("dailyMoney", dailyMoneyList)
 }
 
 const getList = key => {
-  wx.getStorage({
-    key: "dailyMoney",
-    success: function (res) {
-      return res.data || []
-    },
-  })
+  return wx.getStorageSync("dailyMoney")
 }
+
 const getListByTime = time => {
-  wx.getStorage({
-    key: "dailyMoney",
-    success: function (res) {
-      var dailyMoneyList = res.data
-      if (dailyMoneyList != []) {
-        for (let i in dailyMoneyList) {
-          if (dailyMoneyList[i].time == time) {  //如果数组中有该城市，flage变为false  
-            return dailyMoneyList[i];
-          }
-        }
+  var dailyMoneyList = getList()
+  if (dailyMoneyList != []) {
+    for (let i in dailyMoneyList) {
+      if (dailyMoneyList[i].time == time) {
+        //如果数组中有该城市，flage变为false  
+        return dailyMoneyList[i];
       }
-      return {
-        time: "",
-        dailyMoney: "0",
-        readySave: false,
-      }
-    },
-  })
+    }
+  }
+  return {
+    time: "",
+    money: "0",
+    readySave: false,
+  }
 }
 
 module.exports = {
