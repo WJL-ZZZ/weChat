@@ -31,6 +31,23 @@ const conf = {
       dailyMoney.money = dailyMoney.money
       util.setList(dailyMoney)
     }
+  },
+
+  getRadomAgain: function(e){
+    if(dailyMoney.money == "0"){
+      getRadom();
+    }else if(dailyMoney.money == "1"){
+      return;
+    }
+    else{
+      dailyMoney.money = util.getRadom(dailyMoney.money)
+      this.setData({
+        money: dailyMoney.money
+      })
+      dailyMoney.time = time
+      dailyMoney.money = dailyMoney.money
+      util.setList(dailyMoney)
+    }
   }
 };
 

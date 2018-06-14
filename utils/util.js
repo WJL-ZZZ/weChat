@@ -21,7 +21,9 @@ const getRadom = n => {
 const setList = dataItem => {
   var dailyMoneyList = getList() || new Array();
   for (let i in dailyMoneyList) {
-    if (dailyMoneyList[i] == dataItem) {
+    if (dailyMoneyList[i].time == dataItem.time) {
+
+      dailyMoneyList.splice(i, 1, dataItem);
       return false;
     }
   }
@@ -39,7 +41,6 @@ const getListByTime = time => {
   if (dailyMoneyList != []) {
     for (let i in dailyMoneyList) {
       if (dailyMoneyList[i].time == time) {
-        //如果数组中有该城市，flage变为false  
         return dailyMoneyList[i];
       }
     }

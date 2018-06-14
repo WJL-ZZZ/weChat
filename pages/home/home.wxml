@@ -2,7 +2,7 @@
   <view class="body-view text-center">
     <text class='tv-money' plain="true" disabled="false"> {{money}} </text>
     <button class='margin-top' bindtap="getRadom">点击获得今日需要存储的金额</button>
-    <button class='margin-top' bindtap="getRadom">手头有点紧 我们来换个数吧</button>
+    <button class='margin-top' bindtap="getRadomAgain">手头有点紧 我们来换个数吧</button>
     <button class='margin-top' bindtap="getRadom">查看存储金额</button>
   </view>
 </view>

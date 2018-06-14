@@ -12,7 +12,7 @@ Page({
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
-      url: '../candler/candler'
+      url: '../home/home'
     })
   },
   onLoad: function () {
